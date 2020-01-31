@@ -32,6 +32,8 @@ class UI {
   }
 
   showAlert(message, className) {
+    this.clearAlert();
+
     const div = document.createElement("div");
     div.className = className;
     div.appendChild(document.createTextNode(message));
@@ -40,6 +42,14 @@ class UI {
     const search = document.querySelector(".search");
 
     container.insertBefore(div, search);
+  }
+
+  clearAlert() {
+    const currentAlert = document.querySelector(".alert");
+
+    if (currentAlert) {
+      currentAlert.remove();
+    }
   }
 
   clearProfile() {
